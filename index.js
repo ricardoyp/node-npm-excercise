@@ -50,22 +50,27 @@ function flatArrayAndCalculateMean(arr) {
 function sortByNamesAndCapitalizeFirstLetter(arr) {
   // Use the sortBy() function from lodash to sort the array by name
   // Use the capitalize() function from lodash to capitalize the first letter of each name}
-  let auxArr = []
+  // let auxArr = []
 
-  arr.forEach(element => {
-    if (element.name) {
-      element.name = lodash.capitalize(element.name);
-      auxArr.push(element.name)
-    }
-  });
+  // arr.forEach(element => {
+  //   if (element.name) {
+  //     element.name = lodash.capitalize(element.name);
+  //     auxArr.push(element.name)
+  //   }
+  // });
 
-  return lodash.sortBy(auxArr)
+  // return lodash.sortBy(auxArr)
+
+  const result = arr.map(element => lodash.capitalize(element.name))
+  return lodash.sortBy(result);
 }
-
+const arr = [{ name: "john" },{ name: "alex" },]
+sortByNamesAndCapitalizeFirstLetter(arr);
 function transformToSnakeCaseAndAllCaps(arr) {
   // Use the snakeCase() function from lodash to convert the string to snake_case
   // Use the toUpper() function from lodash to convert the string to uppercase
-
+  const result = arr.map(element => lodash.toUpper(lodash.snakeCase(element)))
+  return result;  
 }
 
 module.exports = {
